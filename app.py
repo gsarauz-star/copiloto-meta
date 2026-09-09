@@ -19,8 +19,8 @@ if st.button("Generar Sugerencias", type="primary"):
         try:
             genai.configure(api_key=api_key)
             
-            # Nombre de modelo actualizado para evitar el error 404
-            model = genai.GenerativeModel('gemini-2.5-flash')
+            # Actualizado a gemini-3.6-flash
+            model = genai.GenerativeModel('gemini-3.6-flash')
             
             prompt = f"""
             Eres un asistente de atención al cliente para redes sociales.
