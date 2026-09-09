@@ -10,7 +10,6 @@ intencion = st.selectbox(
     ["Consulta de Ventas/Precio", "Soporte/Dudas", "Queja/Reclamo", "Elogio/Agradecimiento"]
 )
 
-# Ahora pedimos la clave de Gemini en lugar de OpenAI
 api_key = st.sidebar.text_input("Google Gemini API Key", type="password")
 
 if st.button("Generar Sugerencias", type="primary"):
@@ -18,9 +17,10 @@ if st.button("Generar Sugerencias", type="primary"):
         st.warning("Por favor ingresa el comentario y tu API Key de Gemini.")
     else:
         try:
-            # Configuramos la conexión con Gemini
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            
+            # Nombre de modelo actualizado para evitar el error 404
+            model = genai.GenerativeModel('gemini-2.5-flash')
             
             prompt = f"""
             Eres un asistente de atención al cliente para redes sociales.
